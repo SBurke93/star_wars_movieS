@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head'); -%>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-fixed-top">
+
+        <div class="content-padding">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies <i class="fa fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <% for (var i = 0; i < movies.length; i++) { %>
+                        <li><a href="/star_wars_episode/<%= i + 1 %>" class="episode_link"><%= movies[i].title %></a></li>
+                        <% } %>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        </nav>
+
+
+
+
+<div id="hero-image">
+    <h1 id="hero-title"><%= title %></h1>
+</div>
+
+<div id="posters-wrapper" class="content-padding clearfix">
+
+    <% for (var i = 0; i < movies.length; i++) { %>
+        <div class="poster">
+            <a href="/star_wars_episode/<%= movies[i].episode_number %>">
+            <img src="/images/<%= movies[i].poster %>" class="img-responsive">
+            <div class="poster-info-overlay">
+                <h3><%= movies[i].title%></h3>
+                <h4>View More <i class="fa fa-arrow-right"></i></h4>
+            </div>
+            </a>
+        </div>
+        <% } %>
+
+</div>
+
+<%- include('partials/footer'); -%>
+<%- include('partials/scripts'); -%>
+</body>
+</html>
