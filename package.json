@@ -4,7 +4,7 @@
   "description": "A basic movie app for star wars fans",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "app.js"
   },
   "author": "Steven Burke",
   "license": "ISC",
